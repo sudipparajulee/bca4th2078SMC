@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+<?php include 'includes/header.php'; ?>
     <h1 class="text-center font-bold text-4xl my-10">Our <span class="text-red-500"> Products </span></h1>
 
     <div class="grid grid-cols-4 gap-10 px-20">
@@ -26,5 +18,4 @@
             <h1>Product 1</h1>
         </div>
     </div>
-</body>
-</html>
+<?php include 'includes/footer.php'; ?>
