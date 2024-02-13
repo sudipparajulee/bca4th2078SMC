@@ -4,20 +4,12 @@ $priority = $_POST['priority'];
 
 $qry = "INSERT INTO categories(name, priority) VALUES('$name', $priority)";
 
-//create connection
-$server = "localhost";
-$username = "root";
-$password = "";
-$db = "bcaecommerce";
-
-$conn = mysqli_connect($server, $username, $password, $db);
-
-//check connection
-if(!$conn){
-    die("Connection failed: " . mysqli_connect_error());
+include '../includes/dbconnection.php';
+$result = mysqli_query($conn, $qry);
+if($result){
+    echo "Category added successfully";
+}else{
+    echo "Error adding category";
 }
-else{
-    echo "Connected successfully";
-}
-
+include '../includes/closeconnection.php';
 ?>
