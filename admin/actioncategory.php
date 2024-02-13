@@ -7,7 +7,10 @@ $qry = "INSERT INTO categories(name, priority) VALUES('$name', $priority)";
 include '../includes/dbconnection.php';
 $result = mysqli_query($conn, $qry);
 if($result){
-    echo "Category added successfully";
+    echo "<script>
+    alert('Category added successfully');
+    window.location.href = 'categories.php';
+    </script>";
 }else{
     echo "Error adding category";
 }
