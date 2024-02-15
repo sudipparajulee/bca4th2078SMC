@@ -1,7 +1,10 @@
 <?php include 'header.php';
 $id = $_GET['id'];
-
-echo "The id is " . $id;
+$qry = "SELECT * FROM categories WHERE id = $id";
+include '../includes/dbconnection.php';
+$result = mysqli_query($conn, $qry);
+include '../includes/closeconnection.php';
+$row = mysqli_fetch_assoc($result);
 ?>
 
     <h1 class="text-3xl font-bold">Edit Category</h1>
