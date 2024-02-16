@@ -13,7 +13,7 @@
         <div class="mt-5 pl-4 text-lg font-bold">
             <a href="dashboard.php" class="block p-4 hover:bg-gray-300 my-2">Dashboard</a>
             <a href="categories.php" class="block p-4 hover:bg-gray-300 my-2">Categories</a>
-            <a href="" class="block p-4 hover:bg-gray-300 my-2">Products</a>
+            <a href="products.php" class="block p-4 hover:bg-gray-300 my-2">Products</a>
             <a href="" class="block p-4 hover:bg-gray-300 my-2">Customers</a>
             <a href="" class="block p-4 hover:bg-gray-300 my-2">Orders</a>
             <a href="" class="block p-4 hover:bg-gray-300 my-2">Logout</a>
