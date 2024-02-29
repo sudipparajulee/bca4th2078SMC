@@ -8,7 +8,7 @@ include '../includes/closeconnection.php';
     <h1 class="text-3xl font-bold">Create New Product</h1>
     <hr class="my-3 h-1 bg-orange-500">
 
-    <form action="">
+    <form action="actionproduct.php" method="POST" enctype="multipart/form-data">
 
     <select name="category_id" id="" class="p-2 bg-gray-100 border rounded w-full block my-3">
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
