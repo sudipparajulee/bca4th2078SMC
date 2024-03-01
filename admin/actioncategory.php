@@ -10,10 +10,8 @@ if(isset($_POST['store']))
     include '../includes/dbconnection.php';
     $result = mysqli_query($conn, $qry);
     if($result){
-        echo "<script>
-        alert('Category added successfully');
-        window.location.href = 'categories.php';
-        </script>";
+        $_SESSION['msg'] = "Category created successfully";
+        header('location: categories.php');
     }else{
         echo "Error adding category";
     }
@@ -52,10 +50,8 @@ if(isset($_GET['deleteid']))
     include '../includes/closeconnection.php';
 
     if($result){
-        echo "<script>
-        alert('Category deleted successfully');
-        window.location.href = 'categories.php';
-        </script>";
+        $_SESSION['msg'] = "Category deleted successfully";
+        header('location: categories.php');
     }else{
         echo "Error deleting category";
     }

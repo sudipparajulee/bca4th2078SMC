@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['store']))
 {
     $category_id = $_POST['category_id'];
@@ -20,7 +21,8 @@ if(isset($_POST['store']))
     include '../includes/closeconnection.php';
     if($res)
     {
-        header('location:products.php');
+        $_SESSION['msg'] = "Product Created Successfully";
+        header('location: products.php');
     }
     else
     {
