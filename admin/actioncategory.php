@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['store']))
 {
     $name = $_POST['name'];
@@ -33,10 +34,8 @@ if(isset($_POST['update']))
     include '../includes/closeconnection.php';
 
     if($result){
-        echo "<script>
-        alert('Category updated successfully');
-        window.location.href = 'categories.php';
-        </script>";
+        $_SESSION['msg'] = "Category updated successfully";
+        header('location: categories.php');
     }else{
         echo "Error updating category";
     }

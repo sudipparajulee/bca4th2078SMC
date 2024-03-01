@@ -13,14 +13,18 @@ if(!isset($_SESSION['islogin']))
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <?php if(isset($_SESSION['msg'])){ ?>
     <div id="msg" class="fixed right-4 top-4 bg-blue-600 text-white px-10 py-4 rounded-xl text-xl font-bold">
-        <p>Product Added Successfully</p>
+        <p><?php echo $_SESSION['msg']; ?></p>
     </div>
     <script>
         setTimeout(function(){
             document.getElementById('msg').style.display = 'none';
         }, 2000);
     </script>
+    <?php 
+    unset($_SESSION['msg']);
+    } ?>
 
     <div class="flex">
         <nav class="h-screen bg-gray-200 shadow w-56">
