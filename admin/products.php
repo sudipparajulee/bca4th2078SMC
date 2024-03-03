@@ -40,7 +40,9 @@ include '../includes/closeconnection.php';
             <td class="border p-2"><?php echo $row['price']; ?></td>
             <td class="border p-2"><?php echo $row['stock']; ?></td>
             <td class="border p-2"><?php echo $rowcat['name']; ?></td>
-            <td class="border p-2"><?php echo $row['photopath']; ?></td>
+            <td class="border p-2">
+                <img class="h-24" src="../uploads/<?php echo $row['photopath']; ?>" alt="">
+            </td>
             <td class="border p-2">
                 <a href="editproduct.php?id=<?php echo $row['id']; ?>" class="bg-blue-600 text-white px-4 mx-1 py-1 rounded">Edit</a>
                 <a href="actionproduct.php?deleteid=<?php echo $row['id'];?>" class="bg-red-600 text-white px-4 mx-1 py-1 rounded" onclick="return confirm('Are you sure to Delete?');">Delete</a>

@@ -16,24 +16,31 @@ include '../includes/closeconnection.php';
 
     <select name="category_id" id="" class="p-2 bg-gray-100 border rounded w-full block my-3">
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
-        <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+        <option value="<?php echo $row['id']; ?>" 
+        <?php
+        echo ($product['category_id'] == $row['id'])? 'selected':'';
+        ?>
+        ><?php echo $row['name']; ?></option>
         <?php } ?>
         
     </select>
 
     <input type="text" name="name" value="<?php echo $product['name'];?>" placeholder="Enter Product Name" class="p-2 bg-gray-100 border rounded w-full block my-3">
     
-    <input type="text" name="description" placeholder="Enter Description" class="p-2 bg-gray-100 border rounded w-full block my-3">
+    <input type="text" name="description" value="<?php echo $product['description'] ?>" placeholder="Enter Description" class="p-2 bg-gray-100 border rounded w-full block my-3">
 
-    <input type="text" name="price" placeholder="Enter Price" class="p-2 bg-gray-100 border rounded w-full block my-3">
+    <input type="text" name="price" value="<?php echo $product['price'] ?>" placeholder="Enter Price" class="p-2 bg-gray-100 border rounded w-full block my-3">
 
-    <input type="text" name="stock" placeholder="Enter stock" class="p-2 bg-gray-100 border rounded w-full block my-3">
+    <input type="text" name="stock" value="<?php echo $product['stock'] ?>" placeholder="Enter stock" class="p-2 bg-gray-100 border rounded w-full block my-3">
 
     <select name="status" id="" class="p-2 bg-gray-100 border rounded w-full block my-3">
-        <option value="Show">Show</option>
-        <option value="Hide">Hide</option>
+        <option value="Show" <?php echo ($product['status']=='Show')?'selected':'' ?> >Show</option>
+        <option value="Hide" <?php echo ($product['status']=='Hide')?'selected':'' ?> >Hide</option>
     </select>
-
+    
+    <p>Current Image: </p>
+    <img src="../uploads/<?php echo $product['photopath']; ?>" alt="" class="h-40">
+    <input type="hidden" name="oldpath" value="<?php echo $product['photopath']; ?>">
     <input type="file" name="photopath" class="p-2 bg-gray-100 border rounded w-full block my-3">
 
     <div class="flex justify-center gap-5 mt-5">
