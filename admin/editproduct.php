@@ -14,6 +14,7 @@ include '../includes/closeconnection.php';
 
     <form action="actionproduct.php" method="POST" enctype="multipart/form-data">
 
+    <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
     <select name="category_id" id="" class="p-2 bg-gray-100 border rounded w-full block my-3">
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
         <option value="<?php echo $row['id']; ?>" 
@@ -44,7 +45,7 @@ include '../includes/closeconnection.php';
     <input type="file" name="photopath" class="p-2 bg-gray-100 border rounded w-full block my-3">
 
     <div class="flex justify-center gap-5 mt-5">
-        <input type="submit" name="store" value="Add Product" class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
+        <input type="submit" name="update" value="Update Product" class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">
         <a href="products.php" class="bg-red-500 text-white px-8 py-2 rounded">Exit</a>
     </div>
 
