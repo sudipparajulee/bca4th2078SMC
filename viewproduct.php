@@ -8,7 +8,7 @@ include 'includes/closeconnection.php';
 ?>
     <div class="mx-20 py-16 grid grid-cols-2 gap-10">
         <div>
-            <img src="uploads/<?php echo $row['photopath']; ?>" class="w-full h-96 object-cover rounded">
+            <img src="uploads/<?php echo $row['photopath']; ?>" class="w-full h-full object-cover rounded">
         </div>
         <div>
             <form action="">

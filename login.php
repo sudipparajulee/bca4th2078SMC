@@ -32,6 +32,10 @@ if(isset($_POST['login']))
         $row = mysqli_fetch_assoc($result);
         $_SESSION['username'] = $row['fullname'];
         $_SESSION['islogin'] = 'yes';
+        $_SESSION['role'] = $row['role'];
+        if($row['role'] == 'user')
+            header('location: index.php');
+        else
         header('location: admin/dashboard.php');
     }
     else
