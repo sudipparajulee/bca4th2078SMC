@@ -33,6 +33,7 @@ if(isset($_POST['login']))
         $_SESSION['username'] = $row['fullname'];
         $_SESSION['islogin'] = 'yes';
         $_SESSION['role'] = $row['role'];
+        $_SESSION['userid'] = $row['id'];
         if($row['role'] == 'user')
             header('location: index.php');
         else

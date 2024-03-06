@@ -3,6 +3,10 @@ if(!isset($_SESSION['islogin']))
 {
     header('location: ../login.php');
 }
+if($_SESSION['role'] != 'admin')
+{
+    header('location: ../index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +38,7 @@ if(!isset($_SESSION['islogin']))
             <a href="dashboard.php" class="block p-4 hover:bg-gray-300 my-2">Dashboard</a>
             <a href="categories.php" class="block p-4 hover:bg-gray-300 my-2">Categories</a>
             <a href="products.php" class="block p-4 hover:bg-gray-300 my-2">Products</a>
-            <a href="" class="block p-4 hover:bg-gray-300 my-2">Customers</a>
+            <a href="customers.php" class="block p-4 hover:bg-gray-300 my-2">Customers</a>
             <a href="" class="block p-4 hover:bg-gray-300 my-2">Orders</a>
             <a href="logout.php" class="block p-4 hover:bg-gray-300 my-2">Logout</a>
         </div>
