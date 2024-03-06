@@ -38,3 +38,24 @@ if(isset($_POST['cart']))
     }
 
 }
+
+
+//for deleting product from cart
+if(isset($_GET['deleteid']))
+{
+    $id = $_GET['deleteid'];
+    $qry = "DELETE FROM carts WHERE id = $id";
+    include 'includes/dbconnection.php';
+    $result = mysqli_query($conn, $qry);
+    include 'includes/closeconnection.php';
+    if($result)
+    {
+        $_SESSION['msg'] = "Product Removed from Cart";
+        header('location: carts.php');
+    }
+    else
+    {
+        $_SESSION['msg'] = "Failed to Remove Product from Cart";
+        header('location: carts.php');
+    }
+}

@@ -42,7 +42,7 @@ include 'includes/closeconnection.php';
                 <div class="absolute top-10 right-0 hidden group-hover:block border rounded-lg bg-gray-100 text-gray-800 w-40 text-sm">
                     <a href="" class="p-2 block rounded hover:bg-gray-200"><i class="ri-user-fill"></i> My Profile</a>
                     <hr>
-                    <a href="" class="p-2 block rounded hover:bg-gray-200">
+                    <a href="carts.php" class="p-2 block rounded hover:bg-gray-200">
                         <p><i class="ri-shopping-cart-2-line"></i> My Cart</p>
                     </a>
                     <hr>
