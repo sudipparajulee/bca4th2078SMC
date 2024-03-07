@@ -39,7 +39,7 @@ if($_SESSION['role'] != 'admin')
             <a href="categories.php" class="block p-4 hover:bg-gray-300 my-2">Categories</a>
             <a href="products.php" class="block p-4 hover:bg-gray-300 my-2">Products</a>
             <a href="customers.php" class="block p-4 hover:bg-gray-300 my-2">Customers</a>
-            <a href="" class="block p-4 hover:bg-gray-300 my-2">Orders</a>
+            <a href="orders.php" class="block p-4 hover:bg-gray-300 my-2">Orders</a>
             <a href="logout.php" class="block p-4 hover:bg-gray-300 my-2">Logout</a>
         </div>
         </nav>

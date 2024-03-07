@@ -12,7 +12,7 @@ include 'includes/closeconnection.php';
 ?>
     <h1 class="text-center font-bold text-4xl my-10">My <span class="text-red-500"> Cart </span></h1>
 
-    <div class="grid gap-10 px-24">
+    <div class="grid gap-10 px-24 grid-cols-2">
         <?php while($rowcart = mysqli_fetch_assoc($resultcart)){
         $qryprd = "SELECT * FROM products WHERE id=".$rowcart['product_id'];
         include 'includes/dbconnection.php';
@@ -31,7 +31,10 @@ include 'includes/closeconnection.php';
             </div>
             <div class="flex flex-col">
                 <a href="actioncart.php?deleteid=<?php echo $rowcart['id'];?>" onclick="return confirm('Are you sure to remove from Cart?')" class="bg-red-500 text-white px-4 py-2 rounded-lg my-2">Remove</a>
-                <a href="" class="bg-blue-500 text-white px-4 py-2 rounded-lg my-2">Buy Now</a>
+                <form action="actionorder.php" method="POST">
+                    <input type="hidden" name="cart_id" value="<?php echo $rowcart['id'];?>">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg my-2">Buy Now</button>
+                </form>
             </div>
         </div>
         <?php } ?>
